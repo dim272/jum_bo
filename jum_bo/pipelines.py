@@ -4,7 +4,7 @@ import re
 class JumBoPipeline:
 
     def process_item(self, item, spider):
-        # if title end with '<int>g'
+        # if int in title
         if item['title'] and re.search('[0-9]', item['title']):
             i = re.search('[0-9]', item['title'])
             index_for_split = i.regs[0][0]
